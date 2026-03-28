@@ -1,0 +1,21 @@
+# Chapter 2: The Base RAG Stack
+
+# Document Parsing
+pymupdf>=1.24.0
+python-docx>=1.1.0
+openai>=1.0.0
+
+# Text Chunking
+spacy>=3.7.0
+
+# Embedding Models
+sentence-transformers>=3.0.0
+matplotlib>=3.8.0
+
+# Vector Databases
+sqlite-vec>=0.1.0
+psycopg2-binary>=2.9.0
+pgvector>=0.3.0
+
+# Generative LLMs
+anthropic>=0.30.0

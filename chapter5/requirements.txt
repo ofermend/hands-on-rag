@@ -1,0 +1,4 @@
+# Chapter 5: Managed RAG Services (Vectara)
+
+# API calls
+requests>=2.31.0

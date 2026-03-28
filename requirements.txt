@@ -1,0 +1,33 @@
+# Hands-on RAG for Production
+# Common dependencies used across multiple chapters
+#
+# For chapter-specific dependencies, see each chapter's requirements.txt
+# Install with: pip install -r requirements.txt
+
+# Core
+python-dotenv>=1.0.0
+requests>=2.31.0
+numpy>=1.24.0
+pandas>=2.0.0
+
+# LLM APIs
+openai>=1.0.0
+anthropic>=0.30.0
+
+# LangChain ecosystem (Chapters 1, 4, 7, 8)
+langchain~=1.2.0
+langchain-core~=1.2.0
+langchain-openai~=1.1.0
+langchain-community~=0.4.0
+langchain-text-splitters~=0.3.0
+
+# Embeddings (Chapters 2, 3, 8)
+sentence-transformers>=3.0.0
+
+# Document processing
+pypdf>=4.0.0
+pymupdf>=1.24.0
+
+# Jupyter
+jupyter>=1.0.0
+ipykernel>=6.0.0

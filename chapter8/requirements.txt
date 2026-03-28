@@ -1,0 +1,54 @@
+# Core dependencies for Chapter 8 - Image RAG with LlamaIndex and LangChain
+# RAG with images using LlamaIndex/LangChain, Docling, and ChromaDB
+# Uses local Qwen3-Embedding-0.6B for embeddings
+
+# LlamaIndex core and extensions
+llama-index>=0.10.0
+llama-index-core>=0.10.0
+llama-index-vector-stores-chroma>=0.2.0
+llama-index-embeddings-huggingface>=0.3.0
+llama-index-llms-openai>=0.1.0
+llama-index-multi-modal-llms-openai>=0.1.0
+
+# LangChain 1.0+ and extensions
+langchain~=1.2.0
+langchain-core~=1.2.0
+langchain-classic~=1.0.0
+langchain-openai~=1.1.0
+langchain-chroma~=1.0.0
+langchain-huggingface~=0.1.0
+
+# Vector store
+chromadb==1.1.1
+
+# PDF parsing with image extraction
+docling>=1.0.0
+
+# OpenAI for LLM and vision (not embeddings)
+openai>=1.0.0
+
+# HuggingFace and embeddings
+sentence-transformers>=2.7.0
+transformers==4.57.6
+torch>=2.0.0
+
+# Image processing
+pillow>=10.0.0
+
+# Utilities
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.26.0,<2.0.0
+
+# Visualization
+matplotlib>=3.7.0
+
+# Jupyter
+jupyter>=1.0.0
+ipykernel>=6.25.0
+
+# DeepGram and ASR
+deepgram-sdk==5.3.0

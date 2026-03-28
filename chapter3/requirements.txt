@@ -1,0 +1,20 @@
+# Chapter 3: Advanced Retrieval & Generation
+
+# PDF processing
+PyPDF2>=3.0.0
+requests>=2.31.0
+
+# Document parsing (ex32 - parse tables)
+docling>=2.0.0
+
+# Reranking (ex33)
+sentence-transformers>=3.0.0
+
+# Guardrails (ex34)
+llama-index>=0.11.0
+llama-index-llms-openai>=0.2.0
+transformers==4.57.6
+torch>=2.0.0
+
+# Hallucination detection (ex35)
+# Uses vectara/hallucination_evaluation_model via transformers

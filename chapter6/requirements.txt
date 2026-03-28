@@ -1,0 +1,12 @@
+# Chapter 6: Evaluation & Metrics
+
+# LLM-as-a-Judge
+openai>=1.0.0
+
+# Metrics
+spacy>=3.7.0
+sacrebleu>=2.4.0
+rouge>=1.0.0
+
+# Hallucination evaluation (HHEM)
+transformers==4.57.6

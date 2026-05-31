@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hands-On RAG for Production — Ofer Mendelevitch &amp; Forrest Sheng Bao</title>
+  <meta name="description" content="A practical guide to taking RAG from prototype to production: the base stack, scaling retrieval, deployment, evaluation, agentic RAG, multimodal RAG, and GraphRAG. By Ofer Mendelevitch and Forrest Sheng Bao (O'Reilly)." />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="book" />
+  <meta property="og:title" content="Hands-On RAG for Production" />
+  <meta property="og:description" content="Design, develop, and deploy production-ready RAG applications. By Ofer Mendelevitch and Forrest Sheng Bao (O'Reilly)." />
+  <meta property="og:site_name" content="Hands-On RAG for Production" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hands-On RAG for Production" />
+  <meta name="twitter:description" content="Design, develop, and deploy production-ready RAG applications. By Ofer Mendelevitch and Forrest Sheng Bao." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f766e'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23fbfaf8' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">RAG</span>
+        <span class="brand-text">Hands-On RAG for Production</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">The book</a>
+        <a href="#contents">Contents</a>
+        <a href="#code">Code</a>
+        <a href="#authors">Authors</a>
+        <a href="#buy" class="nav-cta">Get the book</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" aria-label="Mobile">
+      <a href="#about">The book</a>
+      <a href="#contents">Contents</a>
+      <a href="#code">Code</a>
+      <a href="#authors">Authors</a>
+      <a href="#buy">Get the book</a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">O&rsquo;Reilly Media &middot; 2026</p>
+        <h1>Hands-On RAG<br />for Production</h1>
+        <p class="subtitle">Design, develop, and deploy production-ready RAG applications.</p>
+        <p class="lede">
+          Retrieval-augmented generation is easy to prototype and hard to ship.
+          This book is about closing that gap &mdash; turning a working demo into a
+          system that holds up under real traffic, real data, and real users.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#buy">Get the book</a>
+          <a class="btn btn-ghost" href="https://github.com/ofermend/hands-on-rag" target="_blank" rel="noopener">
+            Browse the code &rarr;
+          </a>
+        </div>
+        <p class="byline">By <strong>Ofer Mendelevitch</strong> &amp; <strong>Forrest Sheng Bao</strong></p>
+      </div>
+
+      <div class="hero-cover">
+        <!-- Swap this block for <img src="cover.jpg" alt="..."> once you have the cover art. -->
+        <div class="book" aria-label="Book cover: Hands-On RAG for Production">
+          <div class="book-spine"></div>
+          <div class="book-face">
+            <p class="book-pub">O&rsquo;REILLY&trade;</p>
+            <h2 class="book-title">Hands-On<br />RAG for<br />Production</h2>
+            <p class="book-sub">Design, Develop, and Deploy<br />Production-Ready RAG Applications</p>
+            <div class="book-rule"></div>
+            <p class="book-authors">Ofer Mendelevitch<br />&amp; Forrest Sheng Bao</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT / WHAT YOU'LL LEARN ============ -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <p class="kicker">The book</p>
+      <h2 class="section-title">From a RAG demo to a system you can run in production</h2>
+      <div class="prose">
+        <p>
+          The market is full of RAG pipelines, frameworks, and vector databases, which
+          makes it hard to know what to actually use. This book walks through every phase
+          of building a RAG application &mdash; data ingestion, embeddings, and vector
+          search through to advanced techniques like agentic RAG, multimodal RAG, and
+          GraphRAG &mdash; and is honest about the trade-offs at each step.
+        </p>
+        <p>
+          The focus is production: managing hallucinations, keeping latency and cost in
+          check, securing your data, and producing answers you can explain. It also helps
+          you make the call that matters most &mdash; whether to build a RAG system
+          yourself or stand on a managed platform.
+        </p>
+      </div>
+
+      <div class="learn-grid">
+        <div class="learn-card">
+          <h3>Build the base stack</h3>
+          <p>Parsing, chunking, embeddings, vector search, and generation &mdash; the components every RAG system is made of.</p>
+        </div>
+        <div class="learn-card">
+          <h3>Scale retrieval quality</h3>
+          <p>Reranking, guardrails, and hallucination detection to keep answers grounded as the corpus grows.</p>
+        </div>
+        <div class="learn-card">
+          <h3>Ship to production</h3>
+          <p>Cut latency and cost with caching, protect sensitive data with redaction, and deploy with confidence.</p>
+        </div>
+        <div class="learn-card">
+          <h3>Evaluate honestly</h3>
+          <p>LLM-as-a-judge and the metrics that actually tell you whether your system is getting better.</p>
+        </div>
+        <div class="learn-card">
+          <h3>Build vs. platform</h3>
+          <p>A clear-eyed look at when a managed RAG platform earns its keep and when to roll your own.</p>
+        </div>
+        <div class="learn-card">
+          <h3>Go beyond text</h3>
+          <p>Agentic RAG, multimodal RAG over images and audio, and knowledge-graph RAG for harder questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TABLE OF CONTENTS ============ -->
+  <section class="section section-alt" id="contents">
+    <div class="wrap">
+      <p class="kicker">Inside</p>
+      <h2 class="section-title">Table of contents</h2>
+      <ol class="toc">
+        <li><span class="toc-num">01</span><span class="toc-name">Introduction to Retrieval-Augmented Generation (RAG)</span></li>
+        <li><span class="toc-num">02</span><span class="toc-name">The Base RAG Stack</span></li>
+        <li><span class="toc-num">03</span><span class="toc-name">Scaling Your RAG Stack</span></li>
+        <li><span class="toc-num">04</span><span class="toc-name">Deploying RAG to Production</span></li>
+        <li><span class="toc-num">05</span><span class="toc-name">The RAG Platform</span></li>
+        <li><span class="toc-num">06</span><span class="toc-name">Evaluating Your RAG Application</span></li>
+        <li><span class="toc-num">07</span><span class="toc-name">From RAG to AI Agents</span></li>
+        <li><span class="toc-num">08</span><span class="toc-name">Multimodal RAG</span></li>
+        <li><span class="toc-num">09</span><span class="toc-name">Knowledge-Enhanced RAG</span></li>
+        <li><span class="toc-num">10</span><span class="toc-name">The Future of RAG</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ CODE / REPO ============ -->
+  <section class="section" id="code">
+    <div class="wrap code-inner">
+      <div class="code-copy">
+        <p class="kicker">Run it yourself</p>
+        <h2 class="section-title">Every example, as a notebook</h2>
+        <p class="prose">
+          The book ships with a companion repository of Jupyter notebooks &mdash; one set
+          per chapter, runnable locally or in Google Colab. They use LangChain,
+          LlamaIndex, and CrewAI alongside pgvector, SQLite-vec, Neo4j, and models from
+          OpenAI and Anthropic, so you can follow along and adapt the code to your own data.
+        </p>
+        <a class="btn btn-primary" href="https://github.com/ofermend/hands-on-rag" target="_blank" rel="noopener">
+          View on GitHub &rarr;
+        </a>
+      </div>
+      <div class="code-window" aria-hidden="true">
+        <div class="code-bar"><span></span><span></span><span></span></div>
+        <pre class="code-body"><span class="c-com"># chapter1/sample-rag.ipynb</span>
+<span class="c-kw">from</span> langchain <span class="c-kw">import</span> hub
+<span class="c-kw">from</span> langchain_community.vectorstores <span class="c-kw">import</span> FAISS
+
+docs   = loader.load()
+chunks = splitter.split_documents(docs)
+store  = FAISS.from_documents(chunks, embeddings)
+
+answer = rag_chain.invoke(
+    <span class="c-str">"What did Alice find down the rabbit hole?"</span>
+)
+<span class="c-com"># → grounded, cited, and ready to ship</span></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AUTHORS ============ -->
+  <section class="section section-alt" id="authors">
+    <div class="wrap">
+      <p class="kicker">Who wrote it</p>
+      <h2 class="section-title">About the authors</h2>
+      <div class="authors">
+        <article class="author">
+          <div class="author-initials">OM</div>
+          <div class="author-body">
+            <h3>Ofer Mendelevitch</h3>
+            <p>
+              An AI and ML leader specializing in building production systems with large
+              language models, retrieval-augmented generation, and agentic workflows. He
+              previously wrote <em>Practical Data Science with Hadoop and Spark</em> for
+              Addison-Wesley.
+            </p>
+          </div>
+        </article>
+        <article class="author">
+          <div class="author-initials">FB</div>
+          <div class="author-body">
+            <h3>Forrest Sheng Bao</h3>
+            <p>
+              Cofounder of PAIR Systems, Inc. (pairsys.ai) and former co-head of machine
+              learning at Vectara, where he helped develop the HHEM hallucination detector.
+              A former assistant professor at Iowa State University and recipient of an NSF
+              CAREER Award for research on LLM evaluation, he holds a PhD in computer
+              science from Texas Tech University.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BUY ============ -->
+  <section class="section buy" id="buy">
+    <div class="wrap">
+      <p class="kicker">Get the book</p>
+      <h2 class="section-title">Pick your store</h2>
+      <p class="prose prose-center">
+        Available in print and digital. The full text is on O&rsquo;Reilly; print copies
+        ship from the retailers below.
+      </p>
+      <div class="store-grid">
+        <a class="store" href="https://www.amazon.com/Hands-RAG-Production-Production-Ready-Applications/dp/B0G48HGR81/" target="_blank" rel="noopener">
+          <span class="store-name">Amazon</span>
+          <span class="store-sub">Print &amp; Kindle &rarr;</span>
+        </a>
+        <a class="store" href="https://www.oreilly.com/library/view/hands-on-rag-for/9798341621701/" target="_blank" rel="noopener">
+          <span class="store-name">O&rsquo;Reilly</span>
+          <span class="store-sub">Read online &rarr;</span>
+        </a>
+        <a class="store" href="https://books.google.com/books/about/Hands_On_RAG_for_Production.html?id=7JrdEQAAQBAJ" target="_blank" rel="noopener">
+          <span class="store-name">Google Books</span>
+          <span class="store-sub">Preview &amp; buy &rarr;</span>
+        </a>
+        <a class="store" href="https://bookshop.org/p/books/hands-on-rag-for-production-design-develop-and-deploy-production-ready-rag-applications-ofer-mendelevitch/23535824" target="_blank" rel="noopener">
+          <span class="store-name">Bookshop.org</span>
+          <span class="store-sub">Supports indie stores &rarr;</span>
+        </a>
+        <a class="store" href="https://www.booksamillion.com/p/Hands-Rag-Production/Ofer-Mendelevitch/9798341621718" target="_blank" rel="noopener">
+          <span class="store-name">Books-A-Million</span>
+          <span class="store-sub">Print &rarr;</span>
+        </a>
+        <a class="store" href="https://www.target.com/p/hands-on-rag-for-production-by-ofer-mendelevitch-forrest-bao-paperback/-/A-1007733805" target="_blank" rel="noopener">
+          <span class="store-name">Target</span>
+          <span class="store-sub">Paperback &rarr;</span>
+        </a>
+      </div>
+      <p class="isbn">ISBN 979-8-3416-2171-8 &middot; O&rsquo;Reilly Media</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-title">Hands-On RAG for Production</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#about">The book</a>
+        <a href="#contents">Contents</a>
+        <a href="#code">Code</a>
+        <a href="#authors">Authors</a>
+        <a href="#buy">Get the book</a>
+        <a href="https://github.com/ofermend/hands-on-rag" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <p class="footer-fine">&copy; 2026 Ofer Mendelevitch &amp; Forrest Sheng Bao. Published by O&rsquo;Reilly Media.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const mobile = document.querySelector('.nav-mobile');
+    toggle.addEventListener('click', () => {
+      const open = mobile.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    mobile.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        mobile.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      })
+    );
+    // Shadow on header once scrolled
+    const header = document.querySelector('.site-header');
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  </script>
+</body>
+</html>

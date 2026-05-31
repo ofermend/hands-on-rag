@@ -115,6 +115,13 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01e
   transform: rotate(-2deg); transition: transform .35s ease;
 }
 .book:hover { transform: rotate(0deg) translateY(-4px); }
+.book-cover {
+  width: 300px; height: auto; border-radius: 10px;
+  box-shadow: 0 30px 60px -20px rgba(15,40,40,.45), 0 10px 20px -10px rgba(0,0,0,.2);
+  transform: rotate(-2deg);
+  transition: transform .25s ease;
+}
+.book-cover:hover { transform: rotate(0deg) translateY(-4px); }
 .book-spine { position: absolute; inset: 0 auto 0 0; width: 12px; border-radius: 4px 0 0 4px; background: linear-gradient(90deg, var(--teal-dark), var(--teal)); }
 .book-face {
   position: absolute; inset: 0; padding: 30px 26px 26px 30px;
@@ -204,7 +211,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01e
 @media (max-width: 880px) {
   .hero-inner { grid-template-columns: 1fr; gap: 48px; }
   .hero-cover { order: -1; }
-  .book { width: 240px; }
+  .book, .book-cover { width: 240px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

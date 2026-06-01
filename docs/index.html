@@ -34,6 +34,7 @@
       </a>
       <nav class="nav" aria-label="Primary">
         <a href="#about">The book</a>
+        <a href="#praise">Praise</a>
         <a href="#contents">Contents</a>
         <a href="#code">Code</a>
         <a href="#authors">Authors</a>
@@ -45,6 +46,7 @@
     </div>
     <nav class="nav-mobile" aria-label="Mobile">
       <a href="#about">The book</a>
+      <a href="#praise">Praise</a>
       <a href="#contents">Contents</a>
       <a href="#code">Code</a>
       <a href="#authors">Authors</a>
@@ -76,6 +78,65 @@
       <div class="hero-cover">
         <img class="book-cover" src="hands-on-rag-front.jpg"
              alt="Hands-On RAG for Production — book cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRAISE ============ -->
+  <section class="section section-alt" id="praise">
+    <div class="wrap">
+      <p class="kicker">Praise</p>
+      <h2 class="section-title">What practitioners are saying</h2>
+
+      <div class="praise-grid">
+        <div class="praise-col">
+          <figure class="quote-card">
+            <blockquote>The first time I saw a RAG system fail in production, it was because someone had naively chunked their documents on fixed character boundaries and split a legal clause in half. The system retrieved the first chunk but not the second, so the model answered with the opposite of what the contract said.</blockquote>
+            <figcaption><span class="quote-name">Sharon Zhou, PhD</span><span class="quote-role">From the foreword &middot; Corporate VP of Engineering &amp; AI, AMD</span></figcaption>
+          </figure>
+
+          <figure class="quote-card">
+            <blockquote>Hands-On RAG for Production doesn&rsquo;t skip the unglamorous parts. Ofer and Forrest give document parsing, tables, and ingestion the serious treatment they deserve &mdash; which is exactly where most real-world RAG systems live or die.</blockquote>
+            <figcaption><span class="quote-name">Jerry Liu</span><span class="quote-role">CEO, LlamaIndex</span></figcaption>
+          </figure>
+
+          <figure class="quote-card">
+            <blockquote>We are entering an era where software is no longer just a tool we use, but an intelligence we collaborate with. This book correctly identifies that the future of the &lsquo;Corporate Brain&rsquo; relies on the unification of fragmented institutional knowledge through robust RAG pipelines. For teams building these living, breathing engines of insight, this book serves as the definitive guide to mastering the complex interplay between vector stores, agents, and evaluators.</blockquote>
+            <figcaption><span class="quote-name">Bob van Luijt</span><span class="quote-role">Cofounder and CEO, Weaviate</span></figcaption>
+          </figure>
+
+          <figure class="quote-card">
+            <blockquote>RAG has quietly become the default architecture for grounding LLMs in enterprise data, but the engineering discipline around it is still catching up. Mendelevitch and Bao lay out a rigorous, end-to-end framework &mdash; from ingestion and retrieval design through production evaluation and agentic extensions &mdash; that most teams are still figuring out by trial and error.</blockquote>
+            <figcaption><span class="quote-name">Jimmy Lin</span><span class="quote-role">ACM and ACL Fellow; Chair Professor, University of Waterloo</span></figcaption>
+          </figure>
+        </div>
+
+        <div class="praise-col">
+          <figure class="quote-card">
+            <blockquote>If you are a developer, architect, or a leader tasked with bringing LLMs into the real world, this is your manual.</blockquote>
+            <figcaption><span class="quote-name">Jim Dowling</span><span class="quote-role">From the foreword &middot; CEO of Hopsworks</span></figcaption>
+          </figure>
+
+          <figure class="quote-card">
+            <blockquote>While anyone can hack together a toy RAG demo in an afternoon, the gap between a prototype and a production-grade system is vast. Hands-On RAG for Production masterfully explains the intricacies of achieving accuracy, low latency, and scale, while providing the crucial &lsquo;build vs. buy&rsquo; framework every architect needs. If you&rsquo;re moving beyond the sandbox, this is a must read.</blockquote>
+            <figcaption><span class="quote-name">Tallat M. Shafaat</span><span class="quote-role">Founder &amp; CEO, Vectara</span></figcaption>
+          </figure>
+
+          <figure class="quote-card">
+            <blockquote>Hands-On RAG for Production makes the leap from vector search to GraphRAG feel practical, intuitive, and immediately useful. The Knowledge Graph chapter gives readers the foundation they need to build more precise, explainable, and trustworthy AI systems.</blockquote>
+            <figcaption><span class="quote-name">Stephen Chin</span><span class="quote-role">Author of <em>GraphRAG: The Definitive Guide</em>; VP of Developer Relations, Neo4j</span></figcaption>
+          </figure>
+
+          <figure class="quote-card">
+            <blockquote>Hands-On RAG for Production is the first book I&rsquo;ve seen that treats RAG, agents, and evaluation with true production rigor. Every ML or platform engineer shipping LLM applications at scale should read this.</blockquote>
+            <figcaption><span class="quote-name">Shailja Gupta</span><span class="quote-role">Product Manager, AI Platforms</span></figcaption>
+          </figure>
+
+          <figure class="quote-card">
+            <blockquote>If you&rsquo;ve built a demo RAG app and now need reliability, metrics, and tooling that scale, this book closes the gap with concrete patterns and hands-on examples.</blockquote>
+            <figcaption><span class="quote-name">Diva Dugar</span><span class="quote-role">Software Engineer</span></figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
@@ -266,6 +327,7 @@ answer = rag_chain.invoke(
       <p class="footer-title">Hands-On RAG for Production</p>
       <nav class="footer-nav" aria-label="Footer">
         <a href="#about">The book</a>
+        <a href="#praise">Praise</a>
         <a href="#contents">Contents</a>
         <a href="#code">Code</a>
         <a href="#authors">Authors</a>

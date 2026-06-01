@@ -155,6 +155,24 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01e
 @media (max-width: 860px) { .learn-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .learn-grid { grid-template-columns: 1fr; } }
 
+/* ---------- Praise ---------- */
+.praise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; margin-top: 40px; }
+.praise-col { display: flex; flex-direction: column; gap: 20px; }
+.quote-card {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: var(--r); padding: 26px 26px 24px;
+  margin: 0;
+}
+.quote-card blockquote {
+  font-family: var(--serif); font-size: 17px; font-style: italic;
+  line-height: 1.6; color: var(--ink);
+  margin: 0;
+}
+.quote-card figcaption { margin-top: 18px; }
+.quote-name { display: block; font-weight: 600; font-size: 15px; color: var(--ink); }
+.quote-role { display: block; font-size: 14px; color: var(--ink-faint); line-height: 1.4; }
+@media (max-width: 720px) { .praise-grid { grid-template-columns: 1fr; } }
+
 /* ---------- Table of contents ---------- */
 .toc { list-style: none; margin: 36px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
 .toc li { display: flex; align-items: baseline; gap: 18px; padding: 18px 4px; border-bottom: 1px solid var(--line); }
